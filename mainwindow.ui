@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>534</width>
+    <height>230</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(128, 128, 128);</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="inputFieldLabel">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>Число:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="inputFieldLineEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+    color:black;
+    background-color: rgb(255,255,255);
+    border-radius: 5px;
+    border: 2px solid red;
+}
+QLineEdit:hover{
+    font-size: 15;
+    color:black;
+    background-color: rgb(245,245,245);
+    border-radius: 5px;
+    border: 3px solid rgba(130, 46, 80, 1);
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="cleanButton">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+float: right;
+margin-right: 3%;
+border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgb(253,149,2);
+border-bottom: 2px solid rgb(255,202,134);
+color:white;
+font: 700 9pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover{
+      float: right;
+    margin-right: 3%;
+    margin-top: 10px;
+    border-radius: 2px;
+    padding: 2px 7px;
+    font-size: 1.2em;
+    background-color: rgba(130, 46, 80, 1);
+    border-bottom: 4px solid rgba(130, 46, 80, 1);
+    color:white;
+   font-family: 'Roboto Slab', serif;
+}</string>
+        </property>
+        <property name="text">
+         <string>Очистить</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="topMargin">
+       <number>30</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="outputFieldLabel">
+          <property name="minimumSize">
+           <size>
+            <width>55</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Результат:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="outputField">
+          <property name="minimumSize">
+           <size>
+            <width>180</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="statusFieldLabel">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Статус:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="statusField">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="copyButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+float: right;
+margin-right: 3%;
+margin-top: 1px;
+border-radius: 4px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgb(253,149,2);
+border-bottom: 2px solid rgb(255,202,134);
+color:white;
+font: 700 9pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover{
+      float: right;
+    margin-right: 3%;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 2px 9px;
+    font-size: 1.2em;
+    background-color: rgba(130, 46, 80, 1);
+    border-bottom: 2px solid rgba(130, 46, 80, 1);
+    color:white;
+   font-family: 'Roboto Slab', serif;
+}</string>
+        </property>
+        <property name="text">
+         <string>Копировать</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="toNSLabel">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>          Из какой:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="fromNSLabel">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>         В какую:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSplitter" name="splitter_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <widget class="QWidget" name="layoutWidget">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="leftMargin">
+           <number>50</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="radioButtonFrom2">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButtonFrom8">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButtonFrom10">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="leftMargin">
+           <number>15</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="radioButtonTo2">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButtonTo8">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButtonTo10">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="convertButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+float: right;
+margin-right: 3%;
+margin-top: 1px;
+border-radius: 4px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgb(253,149,2);
+border-bottom: 2px solid rgb(255,202,134);
+color:white;
+font: 700 9pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover{
+      float: right;
+    margin-right: 3%;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 2px 9px;
+    font-size: 1.2em;
+    background-color: rgba(130, 46, 80, 1);
+    border-bottom: 4px solid rgba(130, 46, 80, 1);
+    color:white;
+   font-family: 'Roboto Slab', serif;
+}</string>
+        </property>
+        <property name="text">
+         <string>КОНВЕРТИРОВАТЬ</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="infoLabel">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Конвертер v2.0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
